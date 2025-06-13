@@ -8,7 +8,7 @@ image:
 
 ingress:
   enabled: true
-  ingressClassName: alb-nginx
+  ingressClassName: alb-nginxzrrzt
 service:
   type: ClusterIP
   port: 12400
