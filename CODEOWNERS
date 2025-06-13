@@ -15,4 +15,4 @@
 /helm/olcrestproxy/**  @jiri-meluzin @jirka-meluzin-DEV
 /helm/anotherapp/**  @jiri-meluzin @jirka-meluzin-DEV
 
-* @jiri-meluzin
+CODEOWNERS @jiri-meluzin
