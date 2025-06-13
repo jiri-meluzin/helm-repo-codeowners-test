@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "olc-rest-proxy.fullname" . }}-ingress
+spec:
+  ingressClassName: {{ .Values.ingress.ingressClassName | default "nginx" }}
+  rules:
+    - host: olc-rest-proxy.olcrestproxy-dev1.oke-rat2-czjava-dev.vfcz.dc-ratingen.de
+      http:
+        paths:
+          - backend:
+              service:
+                name: {{ include "olc-rest-proxy.fullname" . }}-service
+                port:
+                  number: {{ .Values.service.port }}
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - olc-rest-proxy.olcrestproxy-dev1.oke-rat2-czjava-dev.vfcz.dc-ratingen.de
+      secretName: {{ include "olc-rest-proxy.fullname" . }}-ingress-secret

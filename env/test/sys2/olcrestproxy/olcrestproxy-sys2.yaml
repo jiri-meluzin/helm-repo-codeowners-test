@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: olcrestproxy-dev1
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true
+spec:
+  destination:
+    name: ''
+    namespace: olcrestproxy-dev1
+    server: 'https://kubernetes.default.svc'
+  project: vfcz-java-project
+  syncPolicy:
+    #automated:
+      # Be careful on non-dev with this option!
+    #  prune: true
+    syncOptions:
+      - CreateNamespace=true
+      # Looks like this is necessary for Replace=true flag to work on ConfigMap/Secret
+      # See https://github.com/argoproj/argo-cd/issues/7131
+      - ServerSideApply=true
+  sources:
+    - repoURL: 'https://github.vodafone.com/vf-cdaas/VF-CZ-JAVACORE-HELM'
+      path: helm/OLCRestProxy
+      targetRevision: env/dev1
+      helm:
+        valueFiles:
+          - ../../env/dev/dev1/olcrestproxy/olcrestproxy-dev1.values.yaml

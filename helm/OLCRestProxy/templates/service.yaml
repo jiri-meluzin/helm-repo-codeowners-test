@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "olc-rest-proxy.fullname" . }}-service
+spec:
+  selector:
+    app: {{ include "olc-rest-proxy.name" . }}
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}

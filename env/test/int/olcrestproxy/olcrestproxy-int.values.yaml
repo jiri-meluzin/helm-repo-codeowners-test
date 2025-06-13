@@ -1,0 +1,34 @@
+replicaCount: 1
+
+image:
+  repository: registry-rat.prd.harbor.vodafone.com/vf-cz-javacore/integration/javacore/msa-olc-rest-proxy
+  credentials: regcred
+  tag: "2.0.1-SNAPSHOT.5"
+  pullPolicy: Always
+
+ingress:
+  enabled: true
+  ingressClassName: alb-nginx
+service:
+  type: ClusterIP
+  port: 12400
+
+env:
+  SPRING_DATASOURCE_URL: # To be provided
+  
+secret:  
+  SPRING_DATASOURCE_USERNAME: # To be provided
+  SPRING_DATASOURCE_PASSWORD: # To be provided
+
+probes:
+  # liveness:
+  #   initialDelaySeconds: 15
+  #   periodSeconds: 10
+  #   timeoutSeconds: 3
+  #   failureThreshold: 3
+  readiness:
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3
+resources: {}

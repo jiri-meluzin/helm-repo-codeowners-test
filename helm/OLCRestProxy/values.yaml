@@ -1,0 +1,32 @@
+replicaCount: 1
+
+image:
+  repository: nexus.oskarmobil.cz:5000/javacore/javabuild
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 12400
+  nodePort: 31240
+
+env:
+  SPRING_DATASOURCE_URL: # To be provided
+  
+secret:  
+  SPRING_DATASOURCE_USERNAME: # To be provided
+  SPRING_DATASOURCE_PASSWORD: # To be provided
+
+probes:
+  # liveness:
+  #   initialDelaySeconds: 15
+  #   periodSeconds: 10
+  #   timeoutSeconds: 3
+  #   failureThreshold: 3
+  readiness:
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3
+
+resources: {}
