@@ -4,7 +4,7 @@ image:
   repository: registry-rat.prd.harbor.vodafone.com/vf-cz-javacore/integration/javacore/msa-olc-rest-proxy
   credentials: regcred
   tag: "2.0.1-SNAPSHOT.5"
-  pullPolicy: Always
+  pullPolicy: Alwaysfsdfds
 
 ingress:
   enabled: true
