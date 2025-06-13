@@ -2,15 +2,15 @@
 /env/dev/dev1/olcrestproxy/ @jiri-meluzin @jirka-meluzin-DEV
 /env/dev/dev2/olcrestproxy/ @jiri-meluzin @jirka-meluzin-DEV
 /env/prod/olcrestproxy/ @meluzin-jirka-gmail-com-PROD
-/env/test/int/olcrestproxy/ @TestTeam
-/env/test/sys2/olcrestproxy/ @TestTeam
+/env/test/int/olcrestproxy/ @jirka-meluzin-seznam-cz-TEST
+/env/test/sys2/olcrestproxy/ @jirka-meluzin-seznam-cz-TEST
 
 # Environment-specific paths for anotherapp
 /env/dev/dev1/anotherapp/ @jiri-meluzin @jirka-meluzin-DEV
 /env/dev/dev2/anotherapp/ @jiri-meluzin @jirka-meluzin-DEV
 /env/prod/anotherapp/ @meluzin-jirka-gmail-com-PROD
-/env/test/int/anotherapp/ @TestTeam
-/env/test/sys2/anotherapp/ @TestTeam
+/env/test/int/anotherapp/ @jirka-meluzin-seznam-cz-TEST
+/env/test/sys2/anotherapp/ @jirka-meluzin-seznam-cz-TEST
 
 /helm/OLCRestProxy/ @jiri-meluzin @jirka-meluzin-DEV
 /helm/AnotherApp/ @jiri-meluzin @jirka-meluzin-DEV
