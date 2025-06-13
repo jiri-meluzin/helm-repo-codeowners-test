@@ -1,4 +1,4 @@
-# Environment-specific paths for olcrestproxy ...www
+# Environment-specific paths for olcrestproxy ...wwwddd
 /env/dev/dev1/olcrestproxy/ @jiri-meluzin @jirka-meluzin-DEV
 /env/dev/dev2/olcrestproxy/ @jiri-meluzin @jirka-meluzin-DEV
 /env/prod/olcrestproxy/ @meluzin-jirka-gmail-com-PROD
